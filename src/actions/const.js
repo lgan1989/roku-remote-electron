@@ -1,0 +1,10 @@
+export const BUTTON_CLICK = 'BUTTON_CLICK';
+export const BUTTON_UP = 'BUTTON_UP';
+export const BUTTON_DOWN = 'BUTTON_DOWN';
+export const BUTTON_LEFT = 'BUTTON_LEFT';
+export const BUTTON_RIGHT = 'BUTTON_RIGHT';
+export const BUTTON_HOME = 'BUTTON_HOME';
+export const BUTTON_SELECT = 'BUTTON_SELECT';
+export const BUTTON_BACK = 'BUTTON_BACK';
+export const DEVICE_FOUND = 'DEVICE_FOUND';
+export const DEVICE_INFO = 'DEVICE_INFO';

@@ -46,6 +46,12 @@ app.on('activate', () => {
 
 app.on('ready', () => {
 	mainWindow = createMainWindow();
+  const keys = ['Up', 'Down', 'Left', 'Right', 'Backspace', 'Esc', 'Enter'];
+  keys.map( key => {
+    electron.globalShortcut.register(key, () => {
+      mainWindow.webContents.send('key-pressed', key);
+    })
+  } );
 });
 
 ipcMain.on('scan-device', (event, arg) => {

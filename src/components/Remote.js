@@ -5,6 +5,7 @@ import {List, ListItem} from 'material-ui/List';
 import SettingsRemote from 'material-ui/svg-icons/action/settings-remote';
 import {toastr} from 'react-redux-toastr';
 import ActionInfo from 'material-ui/svg-icons/action/info';
+const ipc = require('electron').ipcRenderer;
 
 const styles = {
   block: {
@@ -53,6 +54,18 @@ class Remote extends React.Component {
       option: 'select'
     };
     this.deviceList = this.props.deviceList.map(d=>d);
+    const keyMaps = {
+      Up: BUTTON_UP,
+      Down: BUTTON_DOWN,
+      Left: BUTTON_LEFT,
+      Right: BUTTON_RIGHT,
+      Backspace: BUTTON_BACK,
+      Esc: BUTTON_HOME,
+      Enter: BUTTON_SELECT
+    };
+    ipc.on('key-pressed', (sender, message) => {
+      this.props.onBtnClick(this.state.host, keyMaps[message]);
+    });
   }
 
   _onOptionChange(evt, value) {

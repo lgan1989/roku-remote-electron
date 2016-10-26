@@ -78,7 +78,7 @@ class Remote extends React.Component {
   render() {
     return (
       <div className="remoteContainer">
-        <img style={styles.logo} src="./dist/roku.svg"/>
+        <img style={styles.logo} src="./src/images/roku.svg"/>
         <div style={styles.hostConfig}>
           <RadioButtonGroup
             name="hostOption"
